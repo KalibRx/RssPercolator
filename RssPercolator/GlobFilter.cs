@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace RssPercolator
 {
     /// <summary>
-    /// Filter using wilcards.
+    /// Filter using wildcards.
     /// <remarks>This filter is case insensitive.</remarks>
     /// </summary>
     internal sealed class GlobFilter : Filter

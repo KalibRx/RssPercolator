@@ -50,7 +50,7 @@ namespace RssPercolator
                 .Where(x => ApplyFilters(filters, x) == FilterAction.Include);
 
             // Remove duplicates
-            IEnumerable<SyndicationItem> merged = Dedup(filtered);
+            IEnumerable<SyndicationItem> merged = Deduplicate(filtered);
 
             if (pipelineSettings.Output != null)
             {
@@ -116,9 +116,9 @@ namespace RssPercolator
             return result;
         }
 
-        private static IEnumerable<SyndicationItem> Dedup(IEnumerable<SyndicationItem> items)
+        private static IEnumerable<SyndicationItem> Deduplicate(IEnumerable<SyndicationItem> items)
         {
-            // Dedup feed items using Id, Title, and Link
+            // Deduplicate feed items using Id, Title, and Link
 
             HashSet<string> titles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
             HashSet<string> ids = new HashSet<string>(StringComparer.OrdinalIgnoreCase);

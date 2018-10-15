@@ -32,7 +32,7 @@ namespace RssPercolator
         /// Factory method for creating specific filters.
         /// </summary>
         /// <param name="settings">Filter configuration.</param>
-        /// <returns>IFilter implementaiton.</returns>
+        /// <returns>IFilter implementation.</returns>
         public static IFilter Create(FilterSettings settings)
         {
             switch (settings.PatternType)
